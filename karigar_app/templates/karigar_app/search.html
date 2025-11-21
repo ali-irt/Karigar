@@ -1,0 +1,199 @@
+{% extends "karigar_app/base.html" %}
+{% load static %}
+
+{% block title %}Search Results - Karigar{% endblock %}
+
+{% block meta_description %}
+<meta name="description" content="Find verified mechanics, electricians, plumbers and auto repair experts near you. Search skilled Karigar professionals instantly.">
+<meta name="keywords" content="karigar search, mechanic finder, electrician finder, auto repair professionals">
+{% endblock %}
+
+{% block extra_css %}
+<style>
+
+/* =======================
+   NEW UNIQUE CLASS NAMES
+   ======================= */
+
+/* Header Section */
+.pageSearchTopBox {
+    background: linear-gradient(135deg, #ff4c3b, #fbd12f);
+    padding: 60px 20px;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 0 22px 22px;
+
+}
+
+.pageSearchTopBox h1 {
+    font-size: 34px;
+    font-weight: 700;
+        margin-left:7.7in ;
+    margin-top: 50px;
+}
+
+/* Search Bar */
+.searchBoxWrapperMain {
+    max-width: 620px;
+    margin: -35px auto 40px auto;
+    background: #fff;
+    padding: 15px;
+    border-radius: 18px;
+    box-shadow: 0px 5px 25px rgba(0,0,0,0.18);
+    display: flex;    margin-left:7.7in ;
+    margin-top: 50px;
+
+}
+
+.searchBoxWrapperMain input {
+    flex: 1;
+    border: none;
+    padding: 12px 15px;
+    border-radius: 10px;
+    outline: none;
+    font-size: 16px;
+}
+
+.searchBoxWrapperMain button {
+    border: none;
+    background: #ff4c3b;
+    color: #fff;
+    padding: 12px 22px;
+    border-radius: 10px;
+    margin-left: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.searchBoxWrapperMain button:hover {
+    background: #dd2f1f;
+}
+
+/* Results Card */
+.resultInfoContainer {
+    background: #fff;
+    padding: 22px;
+    border-radius: 18px;
+    box-shadow: 0px 4px 18px rgba(0,0,0,0.12);
+    margin-bottom: 22px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.resultInfoContainer:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 22px rgba(0,0,0,0.18);
+}
+
+.resultNameTitle {
+    font-size: 22px;
+    font-weight: 700;
+    color: #222;
+}
+
+.resultMetaInfoText {
+    font-size: 14px;
+    color: #666;
+}
+
+.resultRatingStars i {
+    color: #ffd700;
+}
+
+/* Button */
+.btnOpenProfile {
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #ff4c3b, #fbd12f);
+    border: none;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btnOpenProfile:hover {
+    transform: translateY(-3px);
+    box-shadow: 0px 6px 20px rgba(0,0,0,0.2);
+}
+
+/* No Results */
+.emptyResultsWrapper {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.emptyResultsWrapper img {
+    width: 220px;
+    opacity: 0.85;
+}
+
+</style>
+{% endblock %}
+
+{% block content %}
+
+<!-- HEADER -->
+<div class="pageSearchTopBox" style="margin-left: 7.7in;">
+    <h1>Search Results</h1>
+    <p>Showing results for: <strong>{{ query }}</strong></p>
+</div>
+
+<!-- SEARCH BAR -->
+<form method="GET" action="{% url 'search' %}" style="margin-left: 7.7in;">
+    <div class="searchBoxWrapperMain">
+        <input type="text" name="q" placeholder="Search mechanic, service, location..." value="{{ query }}">
+        <button type="submit"><i class="fas fa-search"></i></button>
+    </div>
+</form>
+
+<div class="container py-4"style="margin-left: 7.7in;">
+
+    {% if results %}
+        <h3 class="mb-4">Found {{ results|length }} results</h3>
+
+        {% for mechanic in results %}
+        <div class="resultInfoContainer">
+            <div class="row align-items-center">
+
+                <div class="col-md-2 text-center">
+                    <img src="{% static 'images/user-avatar.png' %}" width="80" class="rounded-circle shadow" alt="Mechanic">
+                </div>
+
+                <div class="col-md-7">
+                    <h3 class="resultNameTitle">{{ mechanic.user.username }}</h3>
+
+                    <p class="resultMetaInfoText">
+                        <i class="fas fa-wrench"></i> {{ mechanic.expertise }}
+                        | <i class="fas fa-map-marker-alt"></i> {{ mechanic.location }}
+                    </p>
+
+                    <p class="resultRatingStars">
+                        <i class="fas fa-star"></i> {{ mechanic.rating }} ({{ mechanic.rating_count }} reviews)
+                    </p>
+
+                    <p class="text-muted">{{ mechanic.bio|truncatechars:140 }}</p>
+                </div>
+
+                <div class="col-md-3 text-end">
+                    <a href="{% url 'mechanic_detail' mechanic.id %}">
+                        <button class="btnOpenProfile">View Profile</button>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+        {% endfor %}
+
+    {% else %}
+
+        <div class="emptyResultsWrapper">
+            <h3>No results found</h3>
+            <p>Try searching with different keywords.</p>
+        </div>
+
+    {% endif %}
+
+</div>
+
+{% endblock %}

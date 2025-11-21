@@ -1,0 +1,140 @@
+{% extends 'karigar_app/base.html' %}
+{% load static %}
+
+{% block title %}Our Services - Karigar{% endblock %}
+
+{% block content %}
+
+<style>
+   /* Fade-in animation */
+   .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeUp 0.8s ease forwards;
+   }
+
+   @keyframes fadeUp {
+      to {
+         opacity: 1;
+         transform: translateY(0);
+      }
+   }
+
+   /* Service Card Styling */
+   .service-card {
+      background: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      transition: all 0.4s ease;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+   }
+
+   .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+   }
+
+   .service-image {
+      width: 100%;
+      height: 170px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      transition: transform 0.4s ease;
+   }
+
+   .service-card:hover .service-image {
+      transform: scale(1.05);
+   }
+
+   .service-icon i {
+      font-size: 40px;
+      color: rgba(34, 34, 34, 1);
+      margin-bottom: 15px;
+   }
+</style>
+
+<!-- Hero Section -->
+<section class="hero-section" style="background-color: #f7f7f7; padding: 80px 0;">
+   <div class="container text-center fade-up">
+      <h1 class="display-4" style="color: #333;">Our Expert Services</h1>
+      <p class="lead" style="color: #666;">A comprehensive range of mechanical and technical solutions for your needs.</p>
+   </div>
+</section>
+
+<!-- Detailed Services Section -->
+<section class="detailed-services-section py-5">
+   <div class="container">
+      <div class="section-heading text-center mb-5 fade-up">
+         <p class="subtitle" style="color: var(--primary-color); font-weight: bold;">What We Offer</p>
+         <h2 class="display-5" style="color: #333;">Solutions for Every Mechanical Challenge</h2>
+      </div>
+
+      <div class="row">
+         <!-- 1 -->
+         <div class="col-lg-4 col-md-6 mb-4 fade-up">
+            <div class="service-card">
+               <img src="{% static 'images/services/accident.jpeg' %}" class="service-image">
+               <div class="service-icon"><i class="fas fa-car-crash"></i></div>
+               <h3>Accident Repair</h3>
+               <p>Complete bodywork and mechanical repair restoring your vehicle to perfect condition.</p>
+            </div>
+         </div>
+
+         <!-- 2 -->
+         <div class="col-lg-4 col-md-6 mb-4 fade-up" style="animation-delay: .1s;">
+            <div class="service-card">
+               <img src="{% static 'images/services/ac.jpeg' %}" class="service-image">
+               <div class="service-icon"><i class="fas fa-fan"></i></div>
+               <h3>AC & Heating Service</h3>
+               <p>Recharge, repairing, and accurate diagnosis of your vehicle’s climate system.</p>
+            </div>
+         </div>
+
+         <!-- 3 -->
+         <div class="col-lg-4 col-md-6 mb-4 fade-up" style="animation-delay: .2s;">
+            <div class="service-card">
+               <img src="{% static 'images/tyre.jpeg' %}" class="service-image">
+               <div class="service-icon"><i class="fas fa-tire"></i></div>
+               <h3>Tire & Wheel Alignment</h3>
+               <p>Balancing, rotation, and precision alignment for smoother & safer drives.</p>
+            </div>
+         </div>
+
+         <!-- 4 -->
+         <div class="col-lg-4 col-md-6 mb-4 fade-up" style="animation-delay: .3s;">
+            <div class="service-card">
+               <img src="{% static 'images/services/transmission.jpeg' %}" class="service-image">
+               <div class="service-icon"><i class="fas fa-cogs"></i></div>
+               <h3>Transmission Repair</h3>
+               <p>Manual & automatic transmission repair ensuring smooth and efficient gear shifting.</p>
+            </div>
+         </div>
+
+         <!-- 5 -->
+         <div class="col-lg-4 col-md-6 mb-4 fade-up" style="animation-delay: .4s;">
+            <div class="service-card">
+               <img src="{% static 'images/services/electric.jpeg' %}" class="service-image">
+               <div class="service-icon"><i class="fas fa-plug"></i></div>
+               <h3>Electrical System</h3>
+               <p>Advanced diagnostics for wiring issues, sensors, and onboard computers.</p>
+            </div>
+         </div>
+
+         <!-- 6 -->
+         <div class="col-lg-4 col-md-6 mb-4 fade-up" style="animation-delay: .5s;">
+            <div class="service-card">
+               <img src="{% static 'images/services/heavy.jpeg' %}" class="service-image">
+               <div class="service-icon"><i class="fas fa-truck-moving"></i></div>
+               <h3>Heavy Machinery</h3>
+               <p>Specialized mechanical & electrical services for heavy-duty industrial machines.</p>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,309 @@
+{% extends 'karigar_app/base.html' %}
+{% load static %}
+{% block content %}
+<style>
+ .hero-content .highlight {
+     text-shadow: 0 0 10px rgba(68, 65, 46, 0.7);
+}
+
+/* Floating Shapes */
+.floating-shape {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.35;
+    animation: floatAnimation 6s ease-in-out infinite alternate;
+}
+
+.shape-1 {
+    width: 180px;
+    height: 180px;
+    background: #ffffff;
+    top: 15%;
+    left: 8%;
+    filter: blur(40px);
+    animation-delay: 0s;
+}
+
+.shape-2 {
+    width: 250px;
+    height: 250px;
+    background: #00eaff;
+    bottom: 10%;
+    right: 10%;
+    filter: blur(50px);
+    animation-delay: 0.5s;
+}
+
+.shape-3 {
+    width: 140px;
+    height: 140px;
+    background: #5d208f13;
+    bottom: 25%;
+    left: 25%;
+    filter: blur(35px);
+    animation-delay: 1s;
+}
+
+/* Floating Animation */
+@keyframes floatAnimation {
+    0%   { transform: translateY(0px); }
+    100% { transform: translateY(-40px); }
+}
+</style>
+<!-- Hero Section -->
+<!-- Hero Section -->
+<section class="hero-section position-relative w-100" style="height: 90vh;max-height: 350px; background-color: #ffffff;">
+    <div class="container h-100">
+        <div class="row h-100 align-items-center">
+            
+            <!-- Left Side: Text -->
+            <div class="col-lg-6 text-white">
+                <h1 class="display-3 fw-bold animate__animated animate__fadeInLeft">
+                    Welcome to <span class="highlight">Karigar</span>
+                </h1>
+                <p class="lead animate__animated animate__fadeInLeft animate__delay-1s text-dark">
+                    Discover the ultimate platform for skilled mechanics and trusted services.  
+                    Friendly experience for all your automotive needs.
+                    
+                </p>
+            </div>
+
+            <!-- Right Side: Image -->
+            <div class="col-lg-6 text-center animate__animated animate__fadeInRight">
+                <img src="{% static 'images/subscribe.png' %}" alt="Hero Image" class="img-fluid rounded ">
+            </div>
+
+        </div>
+    </div>
+>
+</section>
+
+<style>
+.hero-section {
+    background: url('{% static "images/hero-bg.jpg" %}') center/cover no-repeat;
+    position: relative;
+}
+.highlight {
+    color: #49414198; /* Gold highlight */
+}
+</style>
+
+<!-- Find a Stay Section (Search) -->
+<div class="-section py-5" >
+    <div class="container-fluid" >
+        <div class="row justify-content-center">
+            <div class="col-xl-8 col-lg-10 col-md-10 col-12">
+                <div class="-module-position home-form shadow rounded p-4"style="background-color: #ffffff;" >
+                    <form class="mod-finder js-finder-searchform form-search" method="get" action="{% url 'search' %}">
+                        <div class="input-group">
+                            <input type="text" name="q" class="js-finder-search-query form-control" placeholder="Search ">
+                            <button class="btn btn-primary" type="submit">Search</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Welcome Section -->
+<div class="-section py-5" style="margin-block-start: 30px;">
+    <div class="container-fluid text-center px-5">
+        <h2 class="display-5 fw-bold mb-3">Let’s Experience a Trusted Mechanic Platform</h2>
+        <p class="lead mb-5">We provide comprehensive auto care solutions with professionalism and expertise. Your vehicle is in safe hands.</p>
+    </div>
+</div>
+<section class="py-5" style="background: var(--light-bg);">
+    <div class="container">
+        <div class="text-center mb-5">
+            <p style="color: var(--primary-color); font-weight: 600; text-transform: uppercase; letter-spacing: 2px;">Our Services</p>
+            <h2 class="display-5 fw-bold mb-3">Complete Auto Care Solutions</h2>
+            <p class="lead mx-auto" style="max-width: 800px;">From routine maintenance to complex repairs, we handle it all with professionalism and expertise.</p>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+                <div class="card service-card h-100">
+                    <div class="card-img-top">
+                        <img src="{% static 'images/iStock-1794805084.jpg' %}" alt="Oil Change Service" class="img-fluid" loading="lazy">
+                    </div>
+                    <div class="card-body text-center p-4">
+                        <div class="service-icon"><i class="fas fa-oil-can"></i></div>
+                        <h4 class="mb-3">Oil & Filter Change</h4>
+                        <p class="text-muted">Regular oil changes keep your engine running smoothly. We use premium quality oils and filters.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="card service-card h-100">
+                    <div class="card-img-top">
+                        <img src="{% static 'images/brake.webp' %}" alt="Brake Service" class="img-fluid" loading="lazy">
+                    </div>
+                    <div class="card-body text-center p-4">
+                        <div class="service-icon"><i class="fas fa-brake-warning"></i></div>
+                        <h4 class="mb-3">Brake Services</h4>
+                        <p class="text-muted">Complete brake inspection, pad replacement, rotor resurfacing, and brake fluid service.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="card service-card h-100">
+                    <div class="card-img-top">
+                        <img src="{% static 'images/battery.jpg' %}" alt="Battery Service" class="img-fluid" loading="lazy">
+                    </div>
+                    <div class="card-body text-center p-4">
+                        <div class="service-icon"><i class="fas fa-car-battery"></i></div>
+                        <h4 class="mb-3">Battery Service</h4>
+                        <p class="text-muted">Battery testing, replacement, and charging system diagnostics to keep you powered up.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="card service-card h-100">
+                    <div class="card-img-top">
+                        <img src="{% static 'images/tyre.jpeg' %}" alt="Tire Service" class="img-fluid" loading="lazy">
+                    </div>
+                    <div class="card-body text-center p-4">
+                        <div class="service-icon"><i class="fas fa-tire"></i></div>
+                        <h4 class="mb-3">Tire Services</h4>
+                        <p class="text-muted">Tire rotation, balancing, replacement, and flat tire repairs - mobile tire service available.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="card service-card h-100">
+                    <div class="card-img-top">
+                        <img src="{% static 'images/engine.webp' %}" alt="Engine Diagnostics" class="img-fluid" loading="lazy">
+                    </div>
+                    <div class="card-body text-center p-4">
+                        <div class="service-icon"><i class="fas fa-engine"></i></div>
+                        <h4 class="mb-3">Engine Diagnostics</h4>
+                        <p class="text-muted">Advanced computer diagnostics to identify and resolve engine issues quickly and accurately.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="card service-card h-100">
+                    <div class="card-img-top">
+                        <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&q=80&w=500" alt="General Repairs" class="img-fluid" loading="lazy">
+                    </div>
+                    <div class="card-body text-center p-4">
+                        <div class="service-icon"><i class="fas fa-tools"></i></div>
+                        <h4 class="mb-3">General Repairs</h4>
+                        <p class="text-muted">Comprehensive vehicle repairs including AC service, electrical work, and more.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- How It Works Section -->
+
+         
+          <!-- How It Works Section -->
+               <section class="py-5">
+                  <div class="container">
+                     <div class="text-center mb-5">
+                        <p style="color: var(--primary-color); font-weight: 600; text-transform: uppercase; letter-spacing: 2px;">How It Works</p>
+                        <h2 class="display-5 fw-bold mb-3">Get Your Car Fixed in 4 Easy Steps</h2>
+                     </div>
+
+                     <div class="row g-4">
+                        <div class="col-lg-3 col-md-6">
+                           <div class="process-step">
+                              <div class="process-number">1</div>
+                              <h5 class="mb-3">Book Online</h5>
+                              <p class="text-muted">Schedule your service through our website or app. Choose your preferred date and time.</p>
+                           </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                           <div class="process-step">
+                              <div class="process-number">2</div>
+                              <h5 class="mb-3">Get Quote</h5>
+                              <p class="text-muted">Receive an instant free quote with transparent pricing. No surprises, no hidden fees.</p>
+                           </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                           <div class="process-step">
+                              <div class="process-number">3</div>
+                              <h5 class="mb-3">Mechanic Arrives</h5>
+                              <p class="text-muted">Our certified mechanic comes to your location with all necessary tools and parts.</p>
+                           </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                           <div class="process-step">
+                              <div class="process-number">4</div>
+                              <h5 class="mb-3">Drive Away</h5>
+                              <p class="text-muted">Your vehicle is repaired on-site. Pay securely and drive away with confidence.</p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </section>
+<section style="background-color: #f2f2f2;">
+    <div class="text-center py-5">
+         <img src="{% static 'images/h.png' %}" class="mainly" alt="Mechanic Service"  >
+</section>
+
+<!-- Optional CSS -->
+<style>
+.hero-section { overflow: hidden; }
+.hero-content h1 { text-shadow: 0 4px 15px rgba(0,0,0,0.4); }
+.hero-content p { text-shadow: 0 2px 10px rgba(0,0,0,0.3); }
+.service-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.service-card:hover { transform: translateY(-10px); box-shadow: 0 15px 35px rgba(0,0,0,0.2); }
+.process-step { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.process-step:hover { transform: translateY(-8px); box-shadow: 0 10px 30px rgba(0,0,0,0.15); }
+</style>
+<style>
+.service-card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+.card-img-top {
+    height: 180px;
+    overflow: hidden;
+}
+
+.card-img-top img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.service-card:hover .card-img-top img {
+    transform: scale(1.05);
+}
+
+.service-icon {
+    width: 70px;
+    height: 70px;
+    margin: -50px auto 20px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    position: relative;
+    z-index: 1;
+}
+
+.service-icon i {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+}
+</style>
+{% endblock %}

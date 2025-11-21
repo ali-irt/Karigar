@@ -1,0 +1,332 @@
+ {% load static %}
+
+
+{% block meta_description %}
+<meta name="description" content="Login to Karigar or register as a mechanic or client. Pakistan's premium platform for verified mechanics and clients.">
+<meta name="keywords" content="karigar login, mechanic registration, client registration, book mechanic, auto service Pakistan">
+{% endblock %}
+
+{% block extra_css %}
+<style>
+
+/* ---------------- GLOBAL ---------------- */
+body {
+    background: linear-gradient(135deg, #f7f7f7, #e0e7ff);
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+/* Floating soft circles */
+.bg-circle {
+    position: fixed;
+    width: 220px;
+    height: 220px;
+    background: rgba(255,255,255,0.35);
+    filter: blur(85px);
+    border-radius: 50%;
+    animation: floatCircle 10s infinite alternate ease-in-out;
+    z-index: 0;
+}
+.bg-circle.c1 { top: 10%; left: 5%; animation-delay: 0s; }
+.bg-circle.c2 { bottom: 5%; right: 10%; animation-delay: 2s; }
+
+@keyframes floatCircle {
+    0% { transform: translateY(0px) scale(1); }
+    100% { transform: translateY(50px) scale(1.2); }
+}
+
+/* ---------------- LOGO ---------------- */
+.header-logo {
+    position: fixed;
+    top: 20px;
+    left: 30px;
+    z-index: 1000;
+}
+.header-logo img {
+    height: 60px;
+    width: auto;
+    transition: 0.3s;
+}
+.header-logo img:hover {
+    transform: scale(1.1);
+}
+
+/* ---------------- CONTAINER ---------------- */
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 15px;
+    min-height: 100vh;
+    position: relative;
+    z-index: 5;
+}
+
+/* ---------------- CARD (WITH ANIMATION) ---------------- */
+.auth-card {
+    width: 100%;
+    max-width: 500px;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(22px);
+    border-radius: 22px;
+    padding: 45px 35px;
+    border: 1px solid rgba(255,255,255,0.25);
+    box-shadow: 0 15px 45px rgba(0,0,0,0.15);
+
+    animation: fadeSlideUp 0.9s ease forwards;
+    transform-origin: top center;
+    opacity: 0;
+}
+
+/* Card animation */
+@keyframes fadeSlideUp {
+    0% { opacity: 0; transform: translateY(25px) scale(0.98); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* ---------------- TITLES ---------------- */
+.auth-card h2 {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 30px;
+    animation: fadeIn 0.7s ease;
+}
+
+/* ---------------- INPUTS WITH ANIMATION ---------------- */
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+    animation: slideIn 0.7s ease both;
+}
+.input-group:nth-child(1) { animation-delay: 0.2s; }
+.input-group:nth-child(2) { animation-delay: 0.3s; }
+.input-group:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes slideIn {
+    0% { opacity: 0; transform: translateY(12px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.input-group i {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #777;
+    font-size: 16px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 15px 15px 15px 45px;
+    border-radius: 12px;
+    border: 1px solid #dce6f7;
+    font-size: 15px;
+    background: rgba(255,255,255,0.92);
+    transition: all 0.3s ease;
+}
+
+/* Glow focus */
+.input-group input:focus {
+    border-color: #f45d56;
+    box-shadow: 0 0 10px rgba(244,93,86,0.3);
+    background: #fff;
+}
+.input-group input:focus + i {
+    color: #f45d56;
+}
+
+/* Eye icon */
+.show-password {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #888;
+    font-size: 16px;
+}
+
+/* ---------------- BUTTON WITH ANIMATION ---------------- */
+.auth-card button {
+    width: 100%;
+    padding: 15px;
+    border-radius: 12px;
+    border: none;
+    background: linear-gradient(135deg, #000, #444);
+    color: #fff;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    animation: fadeIn 1s ease;
+}
+
+/* Button hover effect */
+.auth-card button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+}
+
+/* Button soft pulse */
+.auth-card button:active {
+    animation: buttonPulse 0.25s ease;
+}
+
+@keyframes buttonPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(0.96); }
+    100% { transform: scale(1); }
+}
+
+/* ---------------- LINKS ---------------- */
+.toggle-container {
+    text-align: center;
+    font-size: 14px;
+    color: #555;
+    margin-top: 15px;
+    animation: fadeIn 1s ease;
+}
+.toggle-link {
+   .color: #f45d56;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.toggle-link:hover {
+    text-decoration: underline;
+}
+
+/* ---------------- FILE INPUT ---------------- */
+.custom-file-input {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 12px;
+    animation: slideIn 0.7s ease both;
+}
+.custom-file-input label {
+    padding: 12px 15px;
+    border-radius: 10px;
+    border: 1px solid #dce6f7;
+    background: #fff;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.custom-file-input label:hover {
+    border-color: #f45d56;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+</style>
+{% endblock %}
+
+
+{% block content %}
+<!-- Logo -->
+<a href="{% url 'index' %}" class="header-logo">
+    <img src="{% static 'images/logo.png' %}" alt="Karigar Logo">
+</a>
+<div class="bg-circle c1"></div>
+<div class="bg-circle c2"></div>
+
+<div class="auth-container">
+    <div class="auth-card">
+
+        <h2 id="form-title">Login</h2>
+{% if messages %}
+  <div class="messages" style="color: red;">
+    {% for message in messages %}
+      <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}">
+        {{ message }}
+      </div>
+    {% endfor %}
+  </div>
+{% endif %}
+
+{% endblock %}
+
+        <!-- LOGIN FORM -->
+<form id="login-form" method="POST" action="{% url 'login_view' %}">
+    {% csrf_token %}
+            <div class="input-group">
+                <i class="fas fa-user"></i>
+                <input name="username" type="text" placeholder="Email or Username" required>
+            </div>
+            <div class="input-group">
+                <i class="fas fa-lock"></i>
+                <input name="password" type="password" id="login-password" placeholder="Password" required>
+                <i class="fas fa-eye show-password" onclick="togglePassword('login-password', this)"></i>
+            </div>
+            <button type="submit">Login</button>
+
+            <!-- Separate links for registration -->
+            <div class="toggle-container">
+                <span class="toggle-link" id="showMechanicRegister">Register as Mechanic</span> |
+                <span class="toggle-link" id="showClientRegister">Register as Client</span>
+            </div>
+        </form>
+
+        <!-- MECHANIC REGISTRATION --><form id="mechanic-form" method="POST" action="{% url 'mechanic_register' %}" enctype="multipart/form-data" style="display:none;">
+    {% csrf_token %}
+
+
+             <div class="input-group"><i class="fas fa-user"></i><input name="name" type="text" placeholder="Full Name" required></div>
+            <div class="input-group"><i class="fas fa-phone"></i><input type="text" name="phone" placeholder="Phone Number" required></div>
+            <div class="input-group"><i class="fas fa-envelope"></i><input type="email" name="email" placeholder="Email" required></div>
+            <div class="input-group"><i class="fas fa-wrench"></i><input type="text" name="service_type" placeholder="Service Type" required></div>
+            <div class="input-group"><i class="fas fa-clock"></i><input type="number" name="experience" placeholder="Years of Experience" required></div>
+            <div class="custom-file-input"><input name="cnicFront" type="file" id="cnicFront" required><label for="cnicFront">Upload CNIC / License (Front)</label></div>
+            <div class="custom-file-input"><input name="cnicBack" type="file" id="cnicBack" required><label for="cnicBack">Upload CNIC / License (Back)</label></div>
+                        <div class="input-group"><i class="fas fa-lock"></i><input name="password" type="password" id="client-password" placeholder="Password" required><i class="fas fa-eye show-password" onclick="togglePassword('client-password', this)"></i></div>
+
+            <button type="submit">Register Mechanic</button>
+            <div class="toggle-container"><span class="toggle-link" id="backToLogin1">Back to Login</span></div>
+        </form>
+
+        <!-- CLIENT REGISTRATION -->
+        <form id="client-form" method="POST" action="{% url 'client_register' %}" style="display:none;">
+    {% csrf_token %}
+             <h2>Register as Client</h2>
+            <div class="input-group"><i class="fas fa-user"></i><input name="name" type="text" placeholder="Full Name" required></div>
+            <div class="input-group"><i class="fas fa-envelope"></i><input name="email" type="email" placeholder="Email" required></div>
+            <div class="input-group"><i class="fas fa-phone"></i><input name="phone" type="text" placeholder="Phone Number" required></div>
+            <div class="input-group"><i class="fas fa-lock"></i><input name="password" type="password" id="client-password" placeholder="Password" required><i class="fas fa-eye show-password" onclick="togglePassword('client-password', this)"></i></div>
+            <button type="submit">Register Client</button>
+            <div class="toggle-container"><span class="toggle-link" id="backToLogin2">Back to Login</span></div>
+        </form>
+
+    </div>
+</div>
+{% block extra_js %}
+<script>
+// Show/hide password
+function togglePassword(id, icon){
+    const field = document.getElementById(id);
+    if(field.type==="password"){ field.type="text"; icon.classList.replace("fa-eye","fa-eye-slash"); }
+    else{ field.type="password"; icon.classList.replace("fa-eye-slash","fa-eye"); }
+}
+
+// Links to switch between forms
+const showMechanicRegister = document.getElementById('showMechanicRegister');
+const showClientRegister = document.getElementById('showClientRegister');
+const backToLogin1 = document.getElementById('backToLogin1');
+const backToLogin2 = document.getElementById('backToLogin2');
+
+const loginForm = document.getElementById('login-form');
+const mechanicForm = document.getElementById('mechanic-form');
+const clientForm = document.getElementById('client-form');
+
+showMechanicRegister.onclick = () => { loginForm.style.display='none'; mechanicForm.style.display='block'; clientForm.style.display='none'; document.getElementById('form-title').textContent='Register Mechanic'; }
+showClientRegister.onclick = () => { loginForm.style.display='none'; mechanicForm.style.display='none'; clientForm.style.display='block'; document.getElementById('form-title').textContent='Register Client'; }
+backToLogin1.onclick = backToLogin2.onclick = () => { loginForm.style.display='block'; mechanicForm.style.display='none'; clientForm.style.display='none'; document.getElementById('form-title').textContent='Login'; }
+</script>
+{% endblock %}

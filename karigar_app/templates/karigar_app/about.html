@@ -1,0 +1,227 @@
+{% extends 'karigar_app/base.html' %}
+{% load static %}
+
+{% block title %}About Us - Karigar{% endblock %}
+
+{% block content %}
+
+<!-- Hero Section -->
+<section class="hero-section d-flex align-items-center justify-content-center"
+         style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                 url('{% static "images/about.png" %}') center/cover no-repeat;
+                padding: 140px 0; color:white; text-align:center;">
+    <div class="container">
+        <h1 class="display-4 fw-bold fade-in">About Karigar</h1>
+        <p class="lead mt-3 fade-in" style="max-width:750px; margin:auto;">
+            Pakistan’s trusted platform for on-demand mechanical and technical services — connecting you with reliable, skilled, and certified karigars.
+        </p>
+    </div>
+</section>
+
+<!-- Who We Are -->
+<section style="background-color: #fff;" class="py-5">
+    <div class="container">
+        <div class="row align-items-center fade-in">
+            <div class="col-lg-6 mb-4">
+                <h2 class="fw-bold">Who We Are</h2>
+                <p class="mt-3" style="line-height:1.7;">
+                    Karigar is a modern, technology-driven service marketplace designed to make mechanical and technical services simple, transparent, and affordable. 
+                    From vehicle repair to electrician, plumber, AC technician, and generator services — we connect you with verified professionals right at your doorstep.
+                </p>
+
+                <p style="line-height:1.7;">
+                    Our mission is to bring convenience and professionalism to everyday repair jobs by combining skilled workers with advanced service management technology.
+                </p>
+            </div>
+
+            <div class="col-lg-6 text-center">
+                <img src="{% static 'images/comp.png' %}" class="img-fluid rounded shadow-sm" alt="Karigar Team">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Why Choose Us -->
+<section class="py-5" style="background:#f9f9f9;">
+    <div class="container">
+        <div class="text-center mb-5 fade-in">
+            <h2 class="fw-bold">Why Choose Karigar?</h2>
+            <p style="max-width:700px; margin:auto;">
+                We are committed to giving you the best experience with unmatched quality, speed, and transparency.
+            </p>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="info-card p-4 text-center fade-up">
+                    <i class="fas fa-user-check fa-2x mb-3" style="color:var(--primary-color);"></i>
+                    <h5 class="fw-bold">Verified Technicians</h5>
+                    <p>Every technician is background-checked, trained, and certified for professionalism and safety.</p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="info-card p-4 text-center fade-up">
+                    <i class="fas fa-stopwatch fa-2x mb-3" style="color:var(--primary-color);"></i>
+                    <h5 class="fw-bold">Fast Service</h5>
+                    <p>Our smart dispatch system ensures fast arrival times so your issues get fixed quickly.</p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="info-card p-4 text-center fade-up">
+                    <i class="fas fa-hand-holding-usd fa-2x mb-3" style="color:var(--primary-color);"></i>
+                    <h5 class="fw-bold">Transparent Pricing</h5>
+                    <p>No hidden charges — pay only for what you need with fair, upfront pricing.</p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="info-card p-4 text-center fade-up">
+                    <i class="fas fa-shield-alt fa-2x mb-3" style="color:var(--primary-color);"></i>
+                    <h5 class="fw-bold">Reliable & Safe</h5>
+                    <p>All work is monitored and quality-checked to ensure your complete satisfaction.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- How It Works -->
+<section class="py-5">
+    <div class="container">
+        <div class="text-center mb-5 fade-in">
+            <h2 class="fw-bold">How Karigar Works</h2>
+            <p style="max-width:700px; margin:auto;">A simple 3-step process to get your service done smoothly.</p>
+        </div>
+
+        <div class="row text-center">
+            <div class="col-lg-4 mb-4 fade-up">
+                <div class="step-box p-4 shadow-sm rounded">
+                    <i class="fas fa-mobile-alt fa-3x mb-3" style="color:var(--primary-color);"></i>
+                    <h5 class="fw-bold">1. Book a Service</h5>
+                    <p>Choose from mechanical, electrical, plumbing, or technical categories and book your slot in seconds.</p>
+                </div>
+            </div>
+
+            <div class="col-lg-4 mb-4 fade-up">
+                <div class="step-box p-4 shadow-sm rounded">
+                    <i class="fas fa-user-cog fa-3x mb-3" style="color:var(--primary-color);"></i>
+                    <h5 class="fw-bold">2. Technician Arrives</h5>
+                    <p>Your assigned karigar reaches your home/workshop on time with the right tools & expertise.</p>
+                </div>
+            </div>
+
+            <div class="col-lg-4 mb-4 fade-up">
+                <div class="step-box p-4 shadow-sm rounded">
+                    <i class="fas fa-thumbs-up fa-3x mb-3" style="color:var(--primary-color);"></i>
+                    <h5 class="fw-bold">3. Job Done Perfectly</h5>
+                    <p>We ensure top-notch service quality with guaranteed satisfaction and secure payment options.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Our Experts -->
+<section class="py-5" style="background:#f4f4f4;">
+    <div class="container">
+        <div class="text-center mb-5 fade-in">
+            <h2 class="fw-bold">Our Certified Karigars</h2>
+            <p style="max-width:750px; margin:auto;">
+                Our team of technicians includes expert mechanics, electricians, plumbers, AC technicians, welders, and auto specialists — each trained to deliver reliable, quality service.
+            </p>
+        </div>
+
+        
+    </div>
+</section>
+
+<!-- Customer Commitment -->
+<section class="py-5 text-center" style="background:#1a1a1a; color:white;">
+    <div class="container fade-in">
+        <h2 class="fw-bold text-white mb-3">Our Commitment</h2>
+        <p style="max-width:750px; margin:auto;">
+            At Karigar, customer satisfaction is our top priority. 
+            We constantly improve our tools, process, and team to bring you fast, reliable, and trustworthy services every time you need help.
+        </p>
+    </div>
+</section>
+
+<!-- Stats Section -->
+<section class="stats-section py-5" style="background:#111; color:white;">
+    <div class="container text-center">
+        <div class="row">
+
+            <div class="col-lg-3 col-6 mb-4">
+                <div class="stat-box fade-up">
+                    <i class="fas fa-users fa-3x mb-3"></i>
+                    <h3 class="text-white fw-bold">5000+</h3>
+                    <p>Happy Customers</p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-6 mb-4">
+                <div class="stat-box fade-up">
+                    <i class="fas fa-tools fa-3x mb-3"></i>
+                    <h3 class="text-white fw-bold">12000+</h3>
+                    <p>Jobs Completed</p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-6 mb-4">
+                <div class="stat-box fade-up">
+                    <i class="fas fa-user-tie fa-3x mb-3"></i>
+                    <h3 class= "text-white fw-bold">100+</h3>
+                    <p>Certified Experts</p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-6 mb-4">
+                <div class="stat-box fade-up">
+                    <i class="fas fa-award fa-3x mb-3"></i>
+                    <h3 class="text-white fw-bold">20+</h3>
+                    <p>Years of Experience</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- CTA Banner -->
+<section class="py-5 text-center" style="background:var(--primary-color); color:white;">
+    <div class="container fade-in">
+        <h2 class="fw-bold mb-3">Need a Karigar Today?</h2>
+        <p class="mb-4">Fast, professional, and affordable service — right at your doorstep.</p>
+        <a href="/book-service/" class="btn btn-light px-4 py-2 fw-bold">Book Now</a>
+    </div>
+</section>
+
+<!-- Animations -->
+<style>
+.fade-in { animation: fadeIn 1.2s ease-in-out; }
+.fade-up { animation: fadeUp 1.2s ease-in-out; }
+
+.info-card, .step-box {
+    border-radius: 12px;
+    background: white;
+    transition: transform .3s, box-shadow .3s;
+}
+.info-card:hover, .step-box:hover {
+    transform: translateY(-6px);
+    box-shadow: 0px 10px 25px rgba(0,0,0,0.15);
+}
+
+.stat-box {
+    transition: transform .3s;
+}
+.stat-box:hover {
+    transform: scale(1.08);
+}
+
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@keyframes fadeUp { from { opacity:0; transform:translateY(30px); } to { opacity:1; transform:translateY(0); } }
+</style>
+
+{% endblock %}

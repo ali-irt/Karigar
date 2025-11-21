@@ -1,0 +1,54 @@
+{% extends 'karigar_app/base.html' %}
+{% load static %}
+
+{% block title %}Careers - Karigar{% endblock %}
+{% block meta_description %}
+<meta name="description" content="Join the Karigar team – check current job openings for mechanics, developers, support staff, and more. Apply online and become part of Pakistan's leading online mechanic platform.">
+<meta name="keywords" content="Karigar careers, jobs in Pakistan, mechanic jobs, developer jobs, Karigar team, online mechanic platform careers">
+{% endblock %}
+
+{% block content %}
+<section class="hero-section text-center py-5" style="background-color:#f7f7f7;">
+    <div class="container">
+        <h1 class="display-4">Careers at Karigar</h1>
+        <p class="lead">Join our team and be part of Pakistan's leading online mechanic platform. Explore current openings and apply online.</p>
+    </div>
+</section>
+
+<section class="career-section py-5">
+    <div class="container">
+        {% if jobs %}
+            <div class="row g-4">
+                {% for job in jobs %}
+                <div class="col-md-6">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ job.title }}</h5>
+                            <p class="text-muted mb-1"><strong>Location:</strong> {{ job.location|default:"Remote/Pakistan" }}</p>
+                            <p class="text-muted mb-2"><strong>Department:</strong> {{ job.department|default:"General" }}</p>
+                            <p class="card-text">{{ job.description|truncatewords:30 }}</p>
+                            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#jobDetails{{ job.id }}" aria-expanded="false" aria-controls="jobDetails{{ job.id }}">
+                                View Details
+                            </button>
+                            <div class="collapse mt-3" id="jobDetails{{ job.id }}">
+                                {% if job.responsibilities %}
+                                <h6>Responsibilities:</h6>
+                                <p>{{ job.responsibilities|linebreaks }}</p>
+                                {% endif %}
+                                {% if job.qualifications %}
+                                <h6>Qualifications:</h6>
+                                <p>{{ job.qualifications|linebreaks }}</p>
+                                {% endif %}
+                                <a href="{% url 'apply_job' job.id %}" class="btn btn-success mt-2">Apply Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p class="text-center">No current job openings. Check back soon!</p>
+        {% endif %}
+    </div>
+</section>
+{% endblock %}

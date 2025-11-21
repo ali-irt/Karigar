@@ -1,0 +1,232 @@
+{% extends 'karigar_app/base.html' %}
+{% load static %}
+
+{% block title %}FAQs - Karigar{% endblock %}
+
+{% block meta_description %}
+<meta name="description" content="Karigar FAQ – Find answers to the most common questions about booking certified mechanics in Pakistan. Learn how to use our Android app for fast and reliable service.">
+<meta name="keywords" content="karigar faq, mechanic booking Pakistan, e-mechanic, car repair app, online mechanic, auto service Pakistan, Karigar app">
+{% endblock %}
+
+{% block extra_css %}
+<style>
+/* --- HERO SECTION --- */
+.hero-section {
+    background: linear-gradient(135deg, #ff4c3b, #fbd12f);
+    color: white;
+    padding: 80px 0;
+    text-align: center;
+    border-radius: 0 0 50px 50px;
+}
+.hero-section h1 { font-size: 3rem; font-weight: 700; }
+.hero-section p { font-size: 1.2rem; margin-top: 10px; }
+
+/* --- FAQ SECTION --- */
+.faq-section { padding: 60px 0; }
+.faq-section .section-heading { margin-bottom: 50px; }
+.faq-section .accordion .accordion-button {
+    background: #fff;
+    color: #333;
+    font-weight: 500;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    padding: 20px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+.faq-section .accordion .accordion-button:focus {
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+.faq-section .accordion .accordion-body {
+    background: #f7f8fc;
+    padding: 20px 25px;
+    border-radius: 0 0 12px 12px;
+    color: #555;
+}
+
+/* --- CTA BANNER --- */
+.faq-cta {
+    background: #fdf2e9;
+    text-align: center;
+    padding: 40px 20px;
+    border-radius: 20px;
+    margin-top: 50px;
+}
+.faq-cta h3 { font-weight: 700; margin-bottom: 15px; }
+.faq-cta p { color: #555; margin-bottom: 20px; }
+.faq-cta a {
+    display: inline-block;
+    background: var(--primary-color);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 10px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s;
+}
+.faq-cta a:hover { background: #e74c3c; }
+</style>
+{% endblock %}
+
+{% block content %}
+
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="container">
+        <h1>Frequently Asked Questions</h1>
+        <p>Karigar is your trusted online mechanic service in Pakistan. Our Android app is the main platform for bookings.</p>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="faq-section container">
+    <div class="section-heading text-center">
+        <p class="subtitle" style="color: var(--primary-color); font-weight: bold;">Need Help?</p>
+        <h2 class="display-5">Your Questions Answered</h2>
+    </div>
+
+    <div class="accordion" id="faqAccordion">
+        {% comment %} 10 high SEO-friendly FAQs {% endcomment %}
+
+        <div class="accordion-item mb-3">
+            <h2 class="accordion-header" id="faq1">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="true">
+                    How do I book a Karigar using the app?
+                </button>
+            </h2>
+            <div id="collapse1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    Download the Karigar Android app, select your service, describe your issue, and choose a time. The app instantly matches you with a certified Karigar near you.
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item mb-3">
+            <h2 class="accordion-header" id="faq2">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2">
+                    Are all Karigars certified and verified?
+                </button>
+            </h2>
+            <div id="collapse2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    Yes, every Karigar is verified through background checks, skill assessments, and certification validation to ensure safe and quality service.
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item mb-3">
+            <h2 class="accordion-header" id="faq3">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3">
+                    What services are available in Pakistan?
+                </button>
+            </h2>
+            <div id="collapse3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    Karigar offers car repairs, AC & heating service, tire & wheel alignment, electrical troubleshooting, transmission repair, and heavy machinery services across major Pakistani cities.
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item mb-3">
+            <h2 class="accordion-header" id="faq4">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4">
+                    How do I pay for the service?
+                </button>
+            </h2>
+            <div id="collapse4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    Payments are processed securely via card, bank transfer, or mobile wallet. You only pay after the service is completed and verified through the app.
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item mb-3">
+            <h2 class="accordion-header" id="faq5">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5">
+                    Do you provide a warranty on repairs?
+                </button>
+            </h2>
+            <div id="collapse5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    Yes, all repairs have a 90-day warranty on parts and labor. Refer to our app and terms for full warranty details.
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item mb-3">
+            <h2 class="accordion-header" id="faq6">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6">
+                    How can I become a registered Karigar?
+                </button>
+            </h2>
+            <div id="collapse6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    Register as a Karigar via the app or website form, submit your CNIC/license, and undergo verification. Once approved, you can receive job requests immediately.
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item mb-3">
+            <h2 class="accordion-header" id="faq7">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7">
+                    Which cities in Pakistan does Karigar serve?
+                </button>
+            </h2>
+            <div id="collapse7" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    We currently operate in major cities including Lahore, Karachi, Islamabad, Multan, Faisalabad, Rawalpindi, and more. Coverage is expanding continuously.
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item mb-3">
+            <h2 class="accordion-header" id="faq8">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8">
+                    Can I schedule a specific time for service?
+                </button>
+            </h2>
+            <div id="collapse8" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    Yes, the app allows you to choose a preferred date and time slot. Our system ensures a Karigar is available at your convenience.
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item mb-3">
+            <h2 class="accordion-header" id="faq9">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9">
+                    What should I do if I have an urgent repair?
+                </button>
+            </h2>
+            <div id="collapse9" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    For urgent repairs, mark your request as “Emergency” in the app. Our system prioritizes urgent requests and connects you to the nearest available Karigar.
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item mb-3">
+            <h2 class="accordion-header" id="faq10">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse10">
+                    Is Karigar safe to use at my home or office?
+                </button>
+            </h2>
+            <div id="collapse10" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    Absolutely. All Karigars are verified, background-checked, and follow safety protocols. You can track their arrival and service through the app for complete peace of mind.
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- CTA to Download App -->
+    <div class="faq-cta">
+        <h3>Get the Karigar App Now!</h3>
+        <p>Our website is a landing page; the full experience is in our Android app. Book certified mechanics instantly!</p>
+        <a href="#">Download App</a>
+    </div>
+
+</section>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+{% endblock %}

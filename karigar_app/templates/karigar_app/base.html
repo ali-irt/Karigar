@@ -1,0 +1,813 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en-gb" dir="ltr" data-bs-theme="light">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="mobile-web-app-capable" content="YES">
+    <meta charset="utf-8">
+
+    <title>{% block title %}Home{% endblock %}</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{% static 'images/logo.png' %}" type="image/png" sizes="any">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- CSS Files (Converted to Django static) -->
+    <link href="{% static 'css/animate.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/fancybox.css' %}" rel="stylesheet">
+    <link href="{% static 'css/slick.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/all.css' %}" rel="stylesheet">
+    <link href="{% static 'css/compiled-e252075b0d110b9f2d76ff0be7c8c231.css' %}" rel="stylesheet">
+    <link href="{% static 'css/compiled-ea51420e169182578faa52cef6adae4d.css' %}" rel="stylesheet">
+    <link href="{% static 'css/button.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/awesomplete.css' %}" rel="stylesheet">
+
+    <style>
+
+.custom-header {
+    width: 100%;
+    background: white;
+    padding: 15px 40px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+/* Logo */
+.header-logo img {
+    height: 80px;
+    transition: transform 0.3s ease;
+}
+.header-logo img:hover {
+    transform: scale(1.05);
+}
+
+/* Navigation */
+.header-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 32px;
+}
+
+.header-nav ul li a {
+    text-decoration: none;
+    font-weight: 600;
+    color: #222;
+    font-size: 18px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/* Smooth underline on hover */
+.header-nav ul li a::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: var(--primary-color);
+    transition: width 0.3s ease;
+    border-radius: 30px;
+}
+.header-nav ul li a:hover::after {
+    width: 100%;
+}
+
+.header-nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+/* Login Button */
+.login-btn {
+    padding: 8px 20px;
+    background: black;
+    color: white !important;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+.login-btn:hover {
+    background: #000;
+    color: #fff !important;
+    transform: translateY(-3px);
+}
+
+/* Mobile toggle button */
+.mobile-toggle {
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: #222;
+}
+
+/* Mobile menu drawer */
+.mobile-menu {
+    background: white;
+    width: 100%;
+    display: none;
+    padding: 20px;
+    border-top: 1px solid #eee;
+}
+.mobile-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.mobile-menu ul li {
+    margin: 14px 0;
+}
+.mobile-menu ul li a {
+    font-size: 18px;
+    color: #222;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* Mobile menu animation */
+.mobile-menu.show {
+    display: block;
+    animation: slideDown 0.3s ease forwards;
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+      #t-62378e26d1d3a472908759 .as-author-avatar {
+         border-width: 2px;
+         border-style: solid;
+         border-color: rgba(255, 255, 255, 1);
+      }
+      /* CARD BASE */
+.service-card {
+   border: none;
+   background: white;
+   border-radius: 14px;
+   overflow: hidden;
+   padding: 25px 20px;
+   transition: transform 0.45s cubic-bezier(.175, .885, .32, 1.275),
+               box-shadow 0.45s ease,
+               background 0.4s ease;
+   position: relative;
+}
+
+/* HOVER EFFECTS */
+.service-card:hover {
+   transform: translateY(-18px) scale(1.03);
+   box-shadow: 0 20px 45px rgba(0,0,0,0.18);
+   background: linear-gradient(180deg, #ffffff, #f6f6f6);
+}
+
+/* FLOATY ANIMATION TO GIVE LIFE */
+.service-card {
+   animation: floaty 5s ease-in-out infinite;
+}
+
+@keyframes floaty {
+   0%   { transform: translateY(0); }
+   50%  { transform: translateY(-6px); }
+   100% { transform: translateY(0); }
+}
+/* STEP WRAPPER */
+.process-step {
+   background: none;           /* no background */
+   border-radius: 12px;
+   padding: 35px 20px;
+   text-align: center;
+   transition: transform 0.35s ease, 
+               box-shadow 0.35s ease;
+   border: 1px solid rgba(0, 0, 0, 0.08); /* subtle border */
+}
+
+/* HOVER EFFECT – clean highlight */
+.process-step:hover {
+   transform: translateY(-10px);
+   box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+   border-color: var(--primary-color);
+}
+
+/* STEP NUMBER */
+.process-number {
+   width: 65px;
+   height: 65px;
+   margin: 0 auto 20px;
+   border-radius: 50%;
+   border: 3px solid var(--primary-color);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-size: 1.8rem;
+   font-weight: bold;
+   color: var(--primary-color);
+   transition: transform 0.35s ease, 
+               box-shadow 0.35s ease;
+}
+
+/* NUMBER HOVER – subtle glow */
+.process-step:hover .process-number {
+   transform: scale(1.12);
+   box-shadow: 0 0 12px rgba(0,0,0,0.1),
+               0 0 8px var(--primary-color);
+}
+
+/* KEYFRAMES */
+/* Slide up on load */
+@keyframes fadeSlideUp {
+   0% {
+      opacity: 0;
+      transform: translateY(40px);
+   }
+   100% {
+      opacity: 1;
+      transform: translateY(0);
+   }
+}
+
+/* Floating effect */
+@keyframes floaty {
+   0% { transform: translateY(0); }
+   100% { transform: translateY(-8px); }
+}
+
+/* Glow pulse effect */
+@keyframes pulseGlow {
+   0% {
+      box-shadow: 0 0 0 rgba(0,0,0,0);
+   }
+   50% {
+      box-shadow: 0 0 20px var(--primary-color);
+   }
+   100% {
+      box-shadow: 0 0 0 rgba(0,0,0,0);
+   }
+}
+
+/* ICON */
+.service-icon {
+   width: 85px;
+   height: 85px;
+   background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+   border-radius: 50%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   margin: 0 auto 22px;
+   font-size: 2.2rem;
+   color: white;
+   position: relative;
+   transition: transform 0.4s cubic-bezier(.175, .885, .32, 1.275);
+   animation: iconPulse 2.5s infinite ease-in-out;
+}
+
+/* HIGH-ENERGY PULSE GLOW */
+@keyframes iconPulse {
+   0%   { transform: scale(1); box-shadow: 0 0 0 rgba(0,0,0,0); }
+   50%  { transform: scale(1.08); box-shadow: 0 0 18px var(--primary-color); }
+   100% { transform: scale(1); box-shadow: 0 0 0 rgba(0,0,0,0); }
+}
+
+/* ICON POP ON HOVER */
+.service-card:hover .service-icon {
+   transform: scale(1.15) rotate(5deg);
+}
+
+   </style>
+   <style>
+      [data-bs-theme=dark] #t-62378e26d1d3a472908759 .as-author-avatar {
+         border-color: #ccc;
+      }
+   </style>
+   <style>
+      #au-622c440ead698076181931 .heading {
+         color: rgba(232, 232, 222, 1);
+         font-weight: 400;
+         font-size: 20px;
+         line-height: 1.2em;
+         font-family: "Marcellus";
+      }
+
+      @media (max-width: 1199.98px) {
+         #au-622c440ead698076181931 .heading {
+            font-size: 20px;
+            line-height: 1.2em;
+         }
+      }
+   </style>
+   <style>
+      #au-622c440ead698076181931 {
+         color: rgba(232, 232, 222, 1);
+         margin-bottom: 20px
+      }
+
+      @media (max-width: 1199.98px) {
+         #au-622c440ead698076181931 {
+            margin-bottom: 20px
+         }
+      }
+   </style>
+   <style>
+      #n-622c41ccf4c6c060033051 .nav-link {
+         font-size: 16px;
+         font-family: "Marcellus";
+      }
+
+      @media (max-width: 1199.98px) {
+         #n-622c41ccf4c6c060033051 .nav-link {
+            font-size: 16px;
+         }
+      }
+   </style>
+   <style>
+      #n-622c41ccf4c6c060033051 .nav-link {
+         color: rgba(144, 144, 144, 1);
+         padding: 5px 0px 5px 0px
+      }
+
+      @media (max-width: 1199.98px) {
+         #n-622c41ccf4c6c060033051 .nav-link {
+            padding: 5px 0px 5px 0px
+         }
+      }
+   </style>
+   <style>
+      #ql-622c45733405e091683147 .heading {
+         color: rgba(232, 232, 222, 1);
+         font-weight: 400;
+         font-size: 20px;
+         line-height: 1.2em;
+         font-family: "Marcellus";
+      }
+
+      @media (max-width: 1199.98px) {
+         #ql-622c45733405e091683147 .heading {
+            font-size: 20px;
+            line-height: 1.2em;
+         }
+      }
+   </style>
+   <style>
+      #ql-622c45733405e091683147 {
+         color: rgba(232, 232, 222, 1);
+         margin-bottom: 20px
+      }
+
+      @media (max-width: 1199.98px) {
+         #ql-622c45733405e091683147 {
+            margin-bottom: 20px
+         }
+      }
+   </style>
+   <style>
+      #n-622c456aab5a6075913221 .nav-link {
+         font-size: 16px;
+         font-family: "Marcellus";
+      }
+
+      @media (max-width: 1199.98px) {
+         #n-622c456aab5a6075913221 .nav-link {
+            font-size: 16px;
+         }
+      }
+   </style>
+   <style>
+      #n-622c456aab5a6075913221 .nav-link {
+         color: rgba(144, 144, 144, 1);
+         padding: 5px 0px 5px 0px
+      }
+
+      @media (max-width: 1199.98px) {
+         #n-622c456aab5a6075913221 .nav-link {
+            padding: 5px 0px 5px 0px
+         }
+      }
+   </style>
+   <style>
+      #i-622c42090d05fc25438507 {
+         margin-bottom: 30px;
+         padding-right: nonepx;
+         padding-bottom: nonepx;
+         padding-left: nonepx
+      }
+
+      @media (max-width: 1199.98px) {
+         #i-622c42090d05fc25438507 {
+            margin-bottom: 30px
+         }
+      }
+
+      @media (max-width: 575.98px) {
+         #i-622c42090d05fc25438507 {
+            padding-right: nonecalc(var(--bs-gutter-x) * .5);
+            padding-bottom: nonecalc(var(--bs-gutter-x) * .5);
+            padding-left: nocalc(var(--bs-gutter-x) * .5)ne
+         }
+      }
+   </style>
+   <style>
+      #t-622c46b0b6e43c26091780 {
+         margin-bottom: 30px
+      }
+
+      @media (max-width: 1199.98px) {
+         #t-622c46b0b6e43c26091780 {
+            margin-bottom: 30px
+         }
+      }
+   </style>
+   <style>
+      #i-622d9f236fa35464694 .-icon-item {
+         font-size: 20px;
+      }
+   </style>
+   <style>
+      #i-622d9f236fa35464694 .-icon-item>a:hover {
+         color: gray;
+      }
+   </style>
+   <style>
+      #i-622d9f236fa35464694 a:hover {
+         color:gray;
+      }
+   </style>
+   <style>
+      #c-622c47ca44276c4032191 .heading {
+         color: rgba(232, 232, 222, 1);
+         font-weight: 400;
+         font-size: 20px;
+         line-height: 1.2em;
+         font-family: "Marcellus";
+      }
+
+      @media (max-width: 1199.98px) {
+         #c-622c47ca44276c4032191 .heading {
+            font-size: 20px;
+            line-height: 1.2em;
+         }
+      }
+   </style>
+   <style>
+      #c-622c47ca44276c4032191 {
+         color: rgba(232, 232, 222, 1);
+         margin-bottom: 20px
+      }
+
+      @media (max-width: 1199.98px) {
+         #c-622c47ca44276c4032191 {
+            margin-bottom: 20px
+         }
+      }
+   </style>
+   <style>
+      #p-622c48e403b3b420875360 .-content-heading {
+         color: rgb(238, 227, 226);
+      }
+   </style>
+   <style>
+      #ac-622c4262e0f1fc23188122 {
+         padding-left: 130px
+      }
+
+      @media (max-width: 1199.98px) {
+         #ac-622c4262e0f1fc23188122 {
+            padding-left: 130px
+         }
+      }
+
+      @media (max-width: 575.98px) {
+         #ac-622c4262e0f1fc23188122 {
+            padding-left: calc(var(--bs-gutter-x) * .5)
+         }
+      }
+   </style>
+   <style>
+      #d-60cd57b521903050966751 {
+         margin-top: 70px;
+         margin-bottom: 30px
+      }
+
+      @media (max-width: 1199.98px) {
+         #d-60cd57b521903050966751 {
+            margin-top: 70px;
+            margin-bottom: 30px
+         }
+      }
+   </style>
+   <style>
+      #d-60cd57b521903050966751 .divider-content {
+         border-top: 1px solid rgba(255, 255, 255, 0.1);
+         margin-top: 70px;
+         margin-bottom: 30px
+      }
+
+      @media (max-width: 1199.98px) {
+         #d-60cd57b521903050966751 .divider-content {
+            margin-top: 70px;
+            margin-bottom: 30px
+         }
+      }
+   </style>
+   <style>
+      [data-bs-theme=dark] #d-60cd57b521903050966751 .divider-content {
+         border-color: rgba(255, 255, 255, 0.1);
+      }
+   </style>
+   <style>
+      #fs-1528971627712 {
+         color: rgba(191, 191, 191, 1);
+      }
+   </style>
+   <style>
+      #fs-1528971627712 a {
+         color: rgba(144, 144, 144, 1);
+      }
+   </style>
+   <style>
+      #fs-1528971627712 a:hover {
+         color: rgba(255, 255, 255, 1);
+      }
+   </style>
+  <!-- JS Files -->
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/jquery.easing.min.js' %}"></script>
+    <script src="{% static 'js/megamenu.min.js' %}"></script>
+    <script src="{% static 'js/jquery.hoverIntent.min.js' %}"></script>
+    <script src="{% static 'js/animate.min.js' %}"></script>
+    <script src="{% static 'js/fancybox.umd.js' %}"></script>
+    <script src="{% static 'js/slick.min.js' %}"></script>
+    <script src="{% static 'js/offcanvas.min.js' %}"></script>
+    <script src="{% static 'js/mobilemenu.min.js' %}"></script>
+    <script src="{% static 'js/script.min.js' %}"></script>
+    <script src="{% static 'js/core.min.js' %}"></script>
+    <script src="{% static 'js/carousel.min.js' %}" type="module"></script>
+    <script src="{% static 'js/messages.min.js' %}" type="module"></script>
+    <script src="{% static 'js/login.min.js' %}" defer></script>
+    <script src="{% static 'js/keepalive.min.js' %}" type="module"></script>
+    <script src="{% static 'js/passwordview.min.js' %}" defer></script>
+    <script src="{% static 'js/awesomplete.min.js' %}" defer></script>
+    <script src="{% static 'js/finder.min.js' %}" type="module"></script>
+
+    <script>
+        jQuery(document).ready(function () {
+            jQuery('#a-6237a82484774458725784 .-slick').slick({
+                slidesToShow: 3,
+                responsive: [
+                    { breakpoint: 992, settings: { slidesToShow: 1 } },
+                    { breakpoint: 768, settings: { slidesToShow: 1 } },
+                    { breakpoint: 576, settings: { slidesToShow: 1 } }
+                ]
+            });
+        });
+
+        var TEMPLATE_HASH = "992e53f919a304071c232cc5d6819b74",
+            _COLOR_MODE = "light";
+    </script>
+
+</head> <!-- document head -->
+
+<body
+   class="site -framework com-content view-featured layout-default itemid-101 -header-horizontal-center home-alias tp-style-16 en-GB ltr">
+   <button type="button" title="Back to Top" id="-backtotop" class="btn circle"><i
+         class="fas fa-arrow-up"></i></button><!--  container -->
+   <div class="-container" >
+      <!--  content -->
+      <div class="-content">
+         <!--  layout -->
+         <div class="-layout -layout-wide">
+            <!--  wrapper -->
+            <div class="-wrapper">
+               <div class="-section -header-section position-relative" id="hs-1529472563843">
+<div class="-container" style="width: 100%; max-width: 1800px; margin: 0 auto;">
+                     <div class="-row row no-gutters gx-0" id="ar-1529472563843">
+                        <div class="-column col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 position-relative"
+                           id="ac-1529472563843">
+                           <div class="-module-position position-absolute w-100" id="h-624a35427a8fcc85807113">
+                              <!-- header starts -->
+        <header class="custom-header">
+    <div class="container-fluid d-flex align-items-center justify-content-between">
+
+        <!-- Left: Logo -->
+        <div class="header-logo">
+            <a href="{% url 'index' %}">
+                <img src="{% static 'images/logo.png' %}" alt="Karigar Logo">
+            </a>
+        </div>
+
+        <!-- Middle: Navigation -->
+        <nav class="header-nav d-none d-lg-block">
+            <ul>
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li><a href="{% url 'about' %}">About</a></li>
+                <li><a href="{% url 'services' %}">Services</a></li>
+                <li><a href="{% url 'how_it_work' %}">How It Works</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
+            </ul>
+        </nav>
+
+        <!-- Right: Login -->
+     <!-- Right: Login / Greeting -->
+<!-- Right: Login / User Dropdown -->
+<div class="header-login d-none d-lg-block">
+    {% if user.is_authenticated %}
+        <div class="dropdown">
+            <button class="btn dropdown-toggle" type="button" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                Hi, {{ user.first_name }}
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
+            </ul>
+        </div>
+    {% else %}
+        <a href="{% url 'login_view' %}" class="login-btn">Login</a>
+    {% endif %}
+</div>
+
+
+        <!-- Mobile Menu Button -->
+        <button class="mobile-toggle d-lg-none" id="mobileToggle">
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+
+    <!-- Mobile Menu Drawer -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li><a href="{% url 'index' %}">Home</a></li>
+            <li><a href="{% url 'about' %}">About</a></li>
+            <li><a href="{% url 'services' %}">Services</a></li>
+            <li><a href="{% url 'how_it_work' %}">How It Works</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+          <li>  <a href="{% url 'login_view' %}" class="login-btn">Login</a></li>
+        </ul>
+    </div>
+</header>
+
+                              <!-- header ends -->
+                        
+               {% block content %}
+               {% endblock %}
+<!-- Footer Section -->
+<footer class="footer-section py-5 bg-white text-dark">
+    <div class="container">
+
+        <div class="row gy-4">
+
+            <!-- About Us -->
+            <div class="col-lg-2 col-md-6">
+                <h5 class="fw-bold mb-3">About Us</h5>
+                <ul class="list-unstyled footer-links">
+                    <li><a href="{% url 'about' %}">About Us</a></li>
+                    <li><a href="{% url 'services' %}">Services</a></li>
+                    <li><a href="{% url 'how_it_work' %}">How it works</a></li>
+                    <li><a href="{% url 'contact' %}">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="col-lg-2 col-md-6">
+                <h5 class="fw-bold mb-3">Quick Links</h5>
+                <ul class="list-unstyled footer-links">
+                    <li><a href="{% url 'safety' %}">Safety</a></li>
+                    <li><a href="{% url 'faq' %}">FAQs</a></li>
+                    <li><a href="{% url 'terms_and_conditions' %}">Terms & Conditions</a></li>
+                    <li><a href="{% url 'privacy_policy' %}">Privacy Policy</a></li>
+                    <li><a href="{% url 'career' %}">Career</a></li>
+                </ul>
+            </div>
+
+            <!-- Logo + Social -->
+            <div class="col-lg-4 text-center">
+                <img src="{% static 'images/logo.png' %}" alt="Logo" class="footer-logo mb-3">
+
+                <div class="d-flex justify-content-center gap-3 fs-4">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-square-behance"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+
+            <!-- Contact -->
+            <div class="col-lg-4">
+                <h5 class="fw-bold mb-3">Contact</h5>
+                <p class="mb-1">Office Revona Technologies, Bahawalpur, Pakistan</p>
+                <p class="mb-1">info@Karigar.com</p>
+                <p class="mb-0">+923366237333</p>
+            </div>
+
+        </div>
+
+        <hr class="my-4">
+
+        <!-- Copyright -->
+        <div class="text-center">
+            <p class="mb-0">
+                © <script>document.write(new Date().getFullYear());</script>
+                Powered by <strong>revona.tech</strong>
+            </p>
+        </div>
+
+    </div>
+</footer>
+
+     
+      <div id="-mobilemenu-wrap">
+         <div class="-mobilemenu d-none d-init dir-left" data-class-prefix="-mobilemenu"
+            id="-mobilemenu">
+            <div class="burger-menu-button active">
+               <button aria-label="Mobile Menu Toggle" type="button" class="button close-offcanvas offcanvas-close-btn">
+                  <span class="box">
+                     <span class="inner"><span class="visually-hidden">Mobile Menu Toggle</span></span>
+                  </span>
+               </button>
+            </div>
+            <ul class="-mobile-menu d-none">
+               <li
+                  class="nav-item nav-item-id-101 nav-item-level-1 nav-item-default nav-item-current nav-item-active nav-item-deeper nav-item-parent has-megamenu nav-item-dropdown">
+                  <!--menu link starts-->
+                  <a href="{% url 'index' %}" title="Home"
+                     class="as-menu-item nav-link-item-id-101 nav-link active item-link-component item-level-1"
+                     data-drop-action="hover">
+                     <span class="nav-title">
+                        <span class="nav-title-text">Home</span> </span>
+                  </a>
+              
+            
+               <li class="nav-item nav-item-id-104 nav-item-level-1"><!--menu link starts-->
+                  <a href="{% url 'services' %}" title="Services"
+                     class="as-menu-item nav-link-item-id-104 nav-link item-link-component item-level-1"
+                     data-drop-action="hover">
+                     <span class="nav-title">
+                        <span class="nav-title-text">Services</span> </span>
+                  </a>
+                  <!--menu link ends-->
+               </li>
+              
+               <li class="nav-item nav-item-id-106 nav-item-level-1"><!--menu link starts-->
+                  <a href="{% url 'contact' %}" title="Contact"
+                     class="as-menu-item nav-link-item-id-106 nav-link item-link-component item-level-1"
+                     data-drop-action="hover">
+                     <span class="nav-title">
+                        <span class="nav-title-text">Contact</span> </span>
+                  </a>
+                  <!--menu link ends-->
+               </li>
+               <li
+                  class="nav-item nav-item-id-121 nav-item-level-1 nav-item-deeper nav-item-parent has-megamenu nav-item-dropdown">
+                  <!--menu link starts-->
+                 
+                  <!--menu link ends-->
+                  <ul class="nav-child list-group navbar-subnav level-1">
+                     <li class="nav-item-submenu nav-item-id-122 nav-item-level-2"><!--menu link starts-->
+                        <a href="{% url 'about' %}" title="About Us ver 1"
+                           class="as-menu-item nav-link-item-id-122 nav-link item-link-alias item-level-2"
+                           data-drop-action="hover">
+                           <span class="nav-title">
+                              <span class="nav-title-text">About Us</span> </span>
+                        </a>
+                        <!--menu link ends-->
+                     </li>
+                    
+               
+                     <li class="nav-item-submenu nav-item-id-119 nav-item-level-2"><!--menu link starts-->
+                        <a href="{% url 'login_view' %}" title="Login"
+                           class="as-menu-item nav-link-item-id-119 nav-link item-link-component item-level-2"
+                           data-drop-action="hover">
+                           <span class="nav-title">
+                              <span class="nav-title-text">Login</span> </span>
+                        </a>
+                        <!--menu link ends-->
+                     </li>
+                 
+                  </ul>
+               </li>
+            </ul>
+         </div>
+      </div>
+   </div>
+ 
+   <!-- body and layout -->
+   <script
+      type="text/javascript">document.addEventListener('DOMContentLoaded', () => { Fancybox.bind('[data-fancybox="-vb-622ee41b70c88012140481"]'); });</script>
+   <!-- body scripts -->
+
+<script>
+document.getElementById("mobileToggle").addEventListener("click", function () {
+    document.getElementById("mobileMenu").classList.toggle("show");
+});
+</script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body><!-- document body -->
+
+</html><!-- document end -->

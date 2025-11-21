@@ -1,0 +1,69 @@
+{% extends 'karigar_app/base.html' %}
+{% load static %}
+
+{% block title %}Safety - Karigar{% endblock %}
+
+{% block content %}
+   <!-- Hero Section for Safety Page -->
+   <section class="hero-section" style="background-color: #f7f7f7; padding: 80px 0;">
+      <div class="container text-center">
+         <h1 class="display-4" style="color: #333;">Our Commitment to Safety</h1>
+         <p class="lead" style="color: #666;">Your security and peace of mind are our top priorities.</p>
+      </div>
+   </section>
+
+   <!-- Safety Measures Section -->
+   <section class="safety-measures-section py-5">
+      <div class="container">
+         <div class="section-heading text-center mb-5">
+            <p class="subtitle" style="color: var(--primary-color); font-weight: bold;">Trust and Security</p>
+            <h2 class="display-5" style="color: #333;">Measures We Take to Protect You</h2>
+         </div>
+
+         <div class="row">
+            <div class="col-lg-4 col-md-6 mb-4">
+               <div class="service-card text-center">
+                  <div class="service-icon"><i class="fas fa-user-shield"></i></div>
+                  <h3>Verified Professionals</h3>
+                  <p>All Karigars undergo a strict background check, identity verification, and professional credential review before joining our platform.</p>
+               </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+               <div class="service-card text-center">
+                  <div class="service-icon"><i class="fas fa-lock"></i></div>
+                  <h3>Secure Payments</h3>
+                  <p>All transactions are processed through a secure, encrypted payment gateway. Your financial information is never shared with the Karigar.</p>
+               </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+               <div class="service-card text-center">
+                  <div class="service-icon"><i class="fas fa-star-half-alt"></i></div>
+                  <h3>Rating & Review System</h3>
+                  <p>Our transparent rating system ensures accountability. Only the best-rated Karigars remain active on the platform.</p>
+               </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+               <div class="service-card text-center">
+                  <div class="service-icon"><i class="fas fa-headset"></i></div>
+                  <h3>24/7 Support</h3>
+                  <p>Our dedicated support team is available around the clock to assist with any issues or concerns you may have during a service.</p>
+               </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+               <div class="service-card text-center">
+                  <div class="service-icon"><i class="fas fa-file-contract"></i></div>
+                  <h3>Service Guarantee</h3>
+                  <p>We stand by the quality of work. If you are not satisfied, we will work to make it right under our service guarantee policy.</p>
+               </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+               <div class="service-card text-center">
+                  <div class="service-icon"><i class="fas fa-camera"></i></div>
+                  <h3>Photo Documentation</h3>
+                  <p>Karigars are required to provide before-and-after photos for complex jobs, ensuring transparency and proof of work completed.</p>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+{% endblock %}
