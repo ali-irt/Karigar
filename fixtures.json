@@ -1,0 +1,489 @@
+[
+  {
+    "model": "karigar_app.user",
+    "pk": "11111111-1111-1111-1111-111111111111",
+    "fields": {
+      "username": "customer1",
+      "email": "customer1@example.com",
+      "first_name": "John",
+      "last_name": "Doe",
+      "role": "customer",
+      "is_active": true,
+      "is_verified": true,
+      "password": "pbkdf2_sha256$260000$examplehash1",
+          "created_at": "2025-11-24T22:30:00Z",
+          "updated_at": "2025-11-24T22:30:00Z"
+    }
+  },
+  {
+    "model": "karigar_app.user",
+    "pk": "11111111-1111-1111-1111-111111111112",
+    "fields": {
+      "username": "customer2",
+      "email": "customer2@example.com",
+      "first_name": "Alice",
+      "last_name": "Green",
+      "role": "customer",
+      "is_active": true,
+      "is_verified": true,
+      "password": "pbkdf2_sha256$260000$examplehash2",
+          "created_at": "2025-11-24T22:30:00Z",
+          "updated_at": "2025-11-24T22:30:00Z"
+    }
+  },
+  {
+    "model": "karigar_app.user",
+    "pk": "11111111-1111-1111-1111-111111111113",
+    "fields": {
+      "username": "customer3",
+      "email": "customer3@example.com",
+      "first_name": "Bob",
+      "last_name": "Brown",
+      "role": "customer",
+      "is_active": true,
+      "is_verified": true,
+      "password": "pbkdf2_sha256$260000$examplehash3",
+          "created_at": "2025-11-24T22:30:00Z",
+          "updated_at": "2025-11-24T22:30:00Z"
+    }
+  },
+  {
+    "model": "karigar_app.user",
+    "pk": "11111111-1111-1111-1111-111111111114",
+    "fields": {
+      "username": "customer4",
+      "email": "customer4@example.com",
+      "first_name": "Emma",
+      "last_name": "White",
+      "role": "customer",
+      "is_active": true,
+      "is_verified": true,
+      "password": "pbkdf2_sha256$260000$examplehash4",
+          "created_at": "2025-11-24T22:30:00Z",
+          "updated_at": "2025-11-24T22:30:00Z"
+    }
+  },
+  {
+    "model": "karigar_app.user",
+    "pk": "11111111-1111-1111-1111-111111111115",
+    "fields": {
+      "username": "customer5",
+      "email": "customer5@example.com",
+      "first_name": "Liam",
+      "last_name": "Black",
+      "role": "customer",
+      "is_active": true,
+      "is_verified": true,
+      "password": "pbkdf2_sha256$260000$examplehash5",
+          "created_at": "2025-11-24T22:30:00Z",
+          "updated_at": "2025-11-24T22:30:00Z"
+    }
+  },
+  {
+    "model": "karigar_app.user",
+    "pk": "22222222-2222-2222-2222-222222222221",
+    "fields": {
+      "username": "mechanic1",
+      "email": "mechanic1@example.com",
+      "first_name": "Mike",
+      "last_name": "Smith",
+      "role": "mechanic",
+      "is_active": true,
+      "is_verified": true,
+      "password": "pbkdf2_sha256$260000$examplehash6",
+          "created_at": "2025-11-24T22:30:00Z",
+          "updated_at": "2025-11-24T22:30:00Z"
+    }
+  },
+  {
+    "model": "karigar_app.user",
+    "pk": "22222222-2222-2222-2222-222222222222",
+    "fields": {
+      "username": "mechanic2",
+      "email": "mechanic2@example.com",
+      "first_name": "Sara",
+      "last_name": "Johnson",
+      "role": "mechanic",
+      "is_active": true,
+      "is_verified": true,
+      "password": "pbkdf2_sha256$260000$examplehash7",
+          "created_at": "2025-11-24T22:30:00Z",
+          "updated_at": "2025-11-24T22:30:00Z"
+    }
+  },
+  {
+    "model": "karigar_app.user",
+    "pk": "22222222-2222-2222-2222-222222222223",
+    "fields": {
+      "username": "mechanic3",
+      "email": "mechanic3@example.com",
+      "first_name": "David",
+      "last_name": "Lee",
+      "role": "mechanic",
+      "is_active": true,
+      "is_verified": true,
+      "password": "pbkdf2_sha256$260000$examplehash8",
+          "created_at": "2025-11-24T22:30:00Z",
+          "updated_at": "2025-11-24T22:30:00Z"
+    }
+  },
+  {
+    "model": "karigar_app.user",
+    "pk": "22222222-2222-2222-2222-222222222224",
+    "fields": {
+      "username": "mechanic4",
+      "email": "mechanic4@example.com",
+      "first_name": "Olivia",
+      "last_name": "Brown",
+      "role": "mechanic",
+      "is_active": true,
+      "is_verified": true,
+      "password": "pbkdf2_sha256$260000$examplehash9",
+          "created_at": "2025-11-24T22:30:00Z",
+          "updated_at": "2025-11-24T22:30:00Z"
+    }
+  },
+  {
+    "model": "karigar_app.user",
+    "pk": "22222222-2222-2222-2222-222222222225",
+    "fields": {
+      "username": "mechanic5",
+      "email": "mechanic5@example.com",
+      "first_name": "Ethan",
+      "last_name": "Davis",
+      "role": "mechanic",
+      "is_active": true,
+      "is_verified": true,
+      "password": "pbkdf2_sha256$260000$examplehash10",
+          "created_at": "2025-11-24T22:30:00Z",
+          "updated_at": "2025-11-24T22:30:00Z"
+    }
+  },
+  {
+    "model": "karigar_app.mechanic",
+    "pk": "33333333-3333-3333-3333-333333333331",
+    "fields": {
+      "user": "22222222-2222-2222-2222-222222222221",
+      "license_number": "LIC1001",
+      "license_expiry": "2030-12-31",
+      "specializations": ["engine","brakes"],
+      "years_of_experience": 5,
+      "bio": "Expert in engine and brakes",
+      "average_rating": 4.5,
+      "is_available": true,
+      "current_latitude": 31.5204,
+      "current_longitude": 74.3587,
+      "service_radius_km": 15,
+          "created_at": "2025-11-24T22:30:00Z",
+          "updated_at": "2025-11-24T22:30:00Z"
+    }
+  },
+  {
+    "model": "karigar_app.mechanic",
+    "pk": "33333333-3333-3333-3333-333333333332",
+    "fields": {
+      "user": "22222222-2222-2222-2222-222222222222",
+      "license_number": "LIC1002",
+      "license_expiry": "2030-12-31",
+      "specializations": ["electrical","brakes"],
+      "years_of_experience": 4,
+      "bio": "Specialized in electrical and brakes",
+      "average_rating": 4.3,
+      "is_available": true,
+      "current_latitude": 31.5204,
+      "current_longitude": 74.3587,
+      "service_radius_km": 12,
+          "created_at": "2025-11-24T22:30:00Z",
+          "updated_at": "2025-11-24T22:30:00Z"
+    }
+  },
+  {
+    "model": "karigar_app.mechanic",
+    "pk": "33333333-3333-3333-3333-333333333333",
+    "fields": {
+      "user": "22222222-2222-2222-2222-222222222223",
+      "license_number": "LIC1003",
+      "license_expiry": "2030-12-31",
+      "specializations": ["tyres","oil"],
+      "years_of_experience": 6,
+      "bio": "Tyres and oil expert",
+      "average_rating": 4.7,
+      "is_available": true,
+      "current_latitude": 31.5204,
+      "current_longitude": 74.3587,
+      "service_radius_km": 20,
+          "created_at": "2025-11-24T22:30:00Z",
+          "updated_at": "2025-11-24T22:30:00Z"
+    }
+  },
+  {
+    "model": "karigar_app.mechanic",
+    "pk": "33333333-3333-3333-3333-333333333334",
+    "fields": {
+      "user": "22222222-2222-2222-2222-222222222224",
+      "license_number": "LIC1004",
+      "license_expiry": "2030-12-31",
+      "specializations": ["engine","oil"],
+      "years_of_experience": 3,
+      "bio": "Engine and oil specialist",
+      "average_rating": 4.2,
+      "is_available": true,
+      "current_latitude": 31.5204,
+      "current_longitude": 74.3587,
+      "service_radius_km": 10,
+          "created_at": "2025-11-24T22:30:00Z",
+          "updated_at": "2025-11-24T22:30:00Z"
+    }
+  },
+  {
+    "model": "karigar_app.mechanic",
+    "pk": "33333333-3333-3333-3333-333333333335",
+    "fields": {
+      "user": "22222222-2222-2222-2222-222222222225",
+      "license_number": "LIC1005",
+      "license_expiry": "2030-12-31",
+      "specializations": ["tyres","electrical"],
+      "years_of_experience": 7,
+      "bio": "Tyres and electrical expert",
+      "average_rating": 4.8,
+      "is_available": true,
+      "current_latitude": 31.5204,
+      "current_longitude": 74.3587,
+      "service_radius_km": 18,
+          "created_at": "2025-11-24T22:30:00Z",
+          "updated_at": "2025-11-24T22:30:00Z"
+    }
+  },
+  {
+    "model": "karigar_app.ServiceRequest",
+    "pk": "44444444-4444-4444-4444-444444444441",
+    "fields": {
+      "customer": "11111111-1111-1111-1111-111111111111",
+      "mechanic": "22222222-2222-2222-2222-222222222221",
+      "service_type": "Brake Repair",
+      "description": "Front brake pads need replacement",
+      "priority": "normal",
+      "customer_latitude": 31.5204,
+      "customer_longitude": 74.3587,
+      "status": "pending",
+      "estimated_cost": "50.00",
+      "actual_cost": null,
+      "discount_amount": "0",
+      "tax_amount": "5.00",
+      "final_amount": null,
+          "created_at": "2025-11-24T22:30:00Z",
+          "updated_at": "2025-11-24T22:30:00Z"
+    }
+  },
+  {
+    "model": "karigar_app.ServiceRequest",
+    "pk": "44444444-4444-4444-4444-444444444442",
+    "fields": {
+      "customer": "11111111-1111-1111-1111-111111111112",
+      "mechanic": "22222222-2222-2222-2222-222222222222",
+      "service_type": "Engine Repair",
+      "description": "Engine overheating issue",
+      "priority": "high",
+      "customer_latitude": 31.5204,
+      "customer_longitude": 74.3587,
+      "status": "in_progress",
+      "estimated_cost": "150.00",
+      "actual_cost": null,
+      "discount_amount": "0",
+      "tax_amount": "15.00",
+      "final_amount": null,
+          "created_at": "2025-11-24T22:30:00Z",
+          "updated_at": "2025-11-24T22:30:00Z"
+    }
+  },
+  {
+    "model": "karigar_app.ServiceRequest",
+    "pk": "44444444-4444-4444-4444-444444444443",
+    "fields": {
+      "customer": "11111111-1111-1111-1111-111111111113",
+      "mechanic": "22222222-2222-2222-2222-222222222223",
+      "service_type": "Tyre Change",
+      "description": "Rear tyre replacement",
+      "priority": "normal",
+      "customer_latitude": 31.5204,
+      "customer_longitude": 74.3587,
+      "status": "completed",
+      "estimated_cost": "70.00",
+      "actual_cost": "65.00",
+      "discount_amount": "5.00",
+      "tax_amount": "6.00",
+      "final_amount": "66.00",
+          "created_at": "2025-11-24T22:30:00Z",
+          "updated_at": "2025-11-24T22:30:00Z"
+    }
+  },
+  {
+    "model": "karigar_app.ServiceRequest",
+    "pk": "44444444-4444-4444-4444-444444444444",
+    "fields": {
+      "customer": "11111111-1111-1111-1111-111111111114",
+      "mechanic": "22222222-2222-2222-2222-222222222224",
+      "service_type": "Oil Change",
+      "description": "Full oil replacement",
+      "priority": "normal",
+      "customer_latitude": 31.5204,
+      "customer_longitude": 74.3587,
+      "status": "pending",
+      "estimated_cost": "40.00",
+      "actual_cost": null,
+      "discount_amount": "0",
+      "tax_amount": "4.00",
+      "final_amount": null,
+          "created_at": "2025-11-24T22:30:00Z",
+          "updated_at": "2025-11-24T22:30:00Z"
+    }
+  },
+  {
+    "model": "karigar_app.ServiceRequest",
+    "pk": "44444444-4444-4444-4444-444444444445",
+    "fields": {
+      "customer": "11111111-1111-1111-1111-111111111115",
+      "mechanic": "22222222-2222-2222-2222-222222222225",
+      "service_type": "Electrical Fix",
+      "description": "Headlight not working",
+      "priority": "high",
+      "customer_latitude": 31.5204,
+      "customer_longitude": 74.3587,
+      "status": "in_progress",
+      "estimated_cost": "60.00",
+      "actual_cost": null,
+      "discount_amount": "0",
+      "tax_amount": "6.00",
+      "final_amount": null,
+          "created_at": "2025-11-24T22:30:00Z",
+          "updated_at": "2025-11-24T22:30:00Z"
+    }
+  },
+  {
+    "model": "karigar_app.ServiceRequest",
+    "pk": "44444444-4444-4444-4444-444444444446",
+    "fields": {
+      "customer": "11111111-1111-1111-1111-111111111111",
+      "mechanic": "22222222-2222-2222-2222-222222222223",
+      "service_type": "Brake Fix",
+      "description": "Brake pads inspection",
+      "priority": "normal",
+      "customer_latitude": 31.5204,
+      "customer_longitude": 74.3587,
+      "status": "pending",
+      "estimated_cost": "50.00",
+      "actual_cost": null,
+      "discount_amount": "0",
+      "tax_amount": "5.00",
+      "final_amount": null,
+          "created_at": "2025-11-24T22:30:00Z",
+          "updated_at": "2025-11-24T22:30:00Z"
+    }
+  },
+  {
+    "model": "karigar_app.ServiceRequest",
+    "pk": "44444444-4444-4444-4444-444444444447",
+    "fields": {
+      "customer": "11111111-1111-1111-1111-111111111112",
+      "mechanic": "22222222-2222-2222-2222-222222222224",
+      "service_type": "Engine Tune-up",
+      "description": "Engine maintenance and tune-up",
+      "priority": "normal",
+      "customer_latitude": 31.5204,
+      "customer_longitude": 74.3587,
+      "status": "completed",
+      "estimated_cost": "120.00",
+      "actual_cost": "115.00",
+      "discount_amount": "5.00",
+      "tax_amount": "11.50",
+      "final_amount": "121.50",
+          "created_at": "2025-11-24T22:30:00Z",
+          "updated_at": "2025-11-24T22:30:00Z"
+    }
+  },
+  {
+    "model": "karigar_app.ServiceRequest",
+    "pk": "44444444-4444-4444-4444-444444444448",
+    "fields": {
+      "customer": "11111111-1111-1111-1111-111111111113",
+      "mechanic": "22222222-2222-2222-2222-222222222221",
+      "service_type": "Oil Replacement",
+      "description": "Engine oil replacement",
+      "priority": "normal",
+      "customer_latitude": 31.5204,
+      "customer_longitude": 74.3587,
+      "status": "pending",
+      "estimated_cost": "45.00",
+      "actual_cost": null,
+      "discount_amount": "0",
+      "tax_amount": "4.50",
+      "final_amount": null,
+          "created_at": "2025-11-24T22:30:00Z",
+          "updated_at": "2025-11-24T22:30:00Z"
+    }
+  },
+  {
+    "model": "karigar_app.ServiceRequest",
+    "pk": "44444444-4444-4444-4444-444444444449",
+    "fields": {
+      "customer": "11111111-1111-1111-1111-111111111114",
+      "mechanic": "22222222-2222-2222-2222-222222222222",
+      "service_type": "Tyre Alignment",
+      "description": "Front tyre alignment",
+      "priority": "normal",
+      "customer_latitude": 31.5204,
+      "customer_longitude": 74.3587,
+      "status": "in_progress",
+      "estimated_cost": "35.00",
+      "actual_cost": null,
+      "discount_amount": "0",
+      "tax_amount": "3.50",
+      "final_amount": null,
+          "created_at": "2025-11-24T22:30:00Z",
+          "updated_at": "2025-11-24T22:30:00Z"
+    }
+  },
+  {
+    "model": "karigar_app.ServiceRequest",
+    "pk": "44444444-4444-4444-4444-444444444450",
+    "fields": {
+      "customer": "11111111-1111-1111-1111-111111111115",
+      "mechanic": "22222222-2222-2222-2222-222222222223",
+      "service_type": "Brake Check",
+      "description": "Brake system inspection",
+      "priority": "high",
+      "customer_latitude": 31.5204,
+      "customer_longitude": 74.3587,
+      "status": "pending",
+      "estimated_cost": "55.00",
+      "actual_cost": null,
+      "discount_amount": "0",
+      "tax_amount": "5.50",
+      "final_amount": null,
+          "created_at": "2025-11-24T22:30:00Z",
+          "updated_at": "2025-11-24T22:30:00Z"
+    }
+  },
+  {
+  "model": "karigar_app.Promotion",
+  "pk": "55555555-5555-5555-5555-555555555551",
+  "fields": {
+    "code": "NY2025",
+    "description": "10% off on all services",
+    "discount_type": "percentage",
+    "discount_value": 10.00,
+    "max_discount": null,
+    "min_order_value": 0.00,
+    "start_date": "2025-12-01T00:00:00Z",
+    "end_date": "2025-12-31T23:59:59Z",
+    "usage_limit": null,
+    "usage_count": 0,
+    "per_user_limit": 1,
+    "applicable_to": "all",
+    "is_active": true,
+          "created_at": "2025-11-24T22:30:00Z",
+          "updated_at": "2025-11-24T22:30:00Z"
+
+  }
+  }
+]

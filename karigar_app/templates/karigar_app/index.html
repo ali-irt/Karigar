@@ -52,7 +52,7 @@
 </style>
 <!-- Hero Section -->
 <!-- Hero Section -->
-<section class="hero-section position-relative w-100" style="height: 90vh;max-height: 350px; background-color: #ffffff;">
+<section class="hero-section position-relative w-100" style=" background-color: #ffffff;">
     <div class="container h-100">
         <div class="row h-100 align-items-center">
             
@@ -75,36 +75,41 @@
 
         </div>
     </div>
->
-</section>
+ </section>
 
 <style>
 .hero-section {
-    background: url('{% static "images/hero-bg.jpg" %}') center/cover no-repeat;
-    position: relative;
+    background-image: url("{% static 'images/hero-bg.jpg' %}");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 350px;
+    width: 100%;
 }
+
+/* 🔥 Force hero image on mobile */
+@media (max-width: 768px) {
+    .hero-section {
+        height: 480px;   /* Adjust for phone */
+        background-size: contain; /* Ensures full image is visible */
+        background-color: #000;   /* fallback background */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section {
+        height: 420px; 
+        background-size: contain;
+    }
+}
+
+
+
 .highlight {
     color: #49414198; /* Gold highlight */
 }
 </style>
 
-<!-- Find a Stay Section (Search) -->
-<div class="-section py-5" >
-    <div class="container-fluid" >
-        <div class="row justify-content-center">
-            <div class="col-xl-8 col-lg-10 col-md-10 col-12">
-                <div class="-module-position home-form shadow rounded p-4"style="background-color: #ffffff;" >
-                    <form class="mod-finder js-finder-searchform form-search" method="get" action="{% url 'search' %}">
-                        <div class="input-group">
-                            <input type="text" name="q" class="js-finder-search-query form-control" placeholder="Search ">
-                            <button class="btn btn-primary" type="submit">Search</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
 <!-- Welcome Section -->
 <div class="-section py-5" style="margin-block-start: 30px;">
